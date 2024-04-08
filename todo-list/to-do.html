@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="To Do List">
+    <meta name="keywords" content="CheckIt, list, items, sort, push forward">
+    <meta name="author" content="Natalie Thurgood, Peyton Alger, Autumn Featherstone, Lucas Hicken">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <!-- Link to the external stylesheet for the page -->
+    <link rel="stylesheet" id="styleSheetCore" href="to-do css/to-do.css">
+    <link rel="stylesheet" id="styleSheetColor" href="to-do css/theme1.css">
+    <!-- Favicon for the website -->
+    <link rel="icon" href="images/checkit.png" type="image/x-icon">
+    <!-- Title of the website shown in the browser tab -->
+    <title>CheckIt</title>
+    <!-- <meta http-equiv="refresh" content="100"> -->
+</head>
+
+<body>
+    <!-- undo buttons and toast -->
+    <div id="toast">You Can't Go Further</div>
+    <div id="snackBar">Created Task<button class="undoButton" id="undoButton" onclick="undo()">Undo</button>
+    </div>
+    <div id="snackBarD">Deleted Task<button class="undoButton" id="undoButtonD" onclick="undoDelete()">Undo</button>
+    </div>
+    <div id="snackBarM">Moved Task<button class="undoButton" id="undoButtonM" onclick="undoMove()">Undo</button></div>
+
+    <header>
+        <div id="currentDay" onclick="currentDay()">
+            Daily To Do
+        </div>
+        <button id="settings"></button>
+    </header>
+    <!-- Navigation bar with buttons to move between dates -->
+    <nav>
+        <h3>
+            <button class="navButton" onclick="movetoprev()">&lt;</button>
+            <!-- Current date display -->
+            <span id="currentdate">If you see this message then there is an error. good luck fixing it</span>
+            <!-- Button to move to the next date -->
+            <button class="navButton" onclick="movetonext()">&gt;</button>
+        </h3>
+    </nav>
+    <!-- Main content area where task cards will be displayed -->
+    <main>
+        <!-- Element to clear floats in the layout -->
+        <div class="clear" id="clear"></div>
+    </main>
+    <!-- Button to open the panel for adding new tasks -->
+    <div id="openButton">
+        <section>+</section>
+    </div>
+    <!-- Footer with a button to scroll back to the top of the page -->
+    <footer>
+        <button class="totop" onclick="scrollToTop()">Scroll to Top</button>
+    </footer>
+    <!-- Backdrop for modal elements or notifications -->
+    <div id="backdrop"></div>
+    <!-- Panel that slides in for adding new tasks -->
+    <div id="slidePanel">
+        <h1 class="createItem">Create Item</h1>
+        <!-- Button to close the slide panel -->
+        <button id="exitButton">x</button>
+        <!-- Container for the input field to enter new tasks -->
+        <div id="inputContainer">
+            <input type="text" name="textbox" id="textbox" placeholder="Enter task here">
+
+            <input type="time" name="timeInput" id="timeInput">
+
+            <div id="repeat">
+                <h3 class="choose">Repeat</h3>
+                <input type="radio" id="never" name="repeat" checked>
+                <label for="never">None</label> <br>
+                <input type="radio" id="days" name="repeat">
+                <label for="days">Daily</label> <br>
+                <input type="radio" id="weeks" name="repeat">
+                <label for="weeks">Weekly</label>
+            </div>
+        </div>
+        <!-- Button to finish adding a new task -->
+        <button id="closeButton" onclick="addNewTask">Submit</button>
+    </div>
+    <div id="slidePanelEdit">
+        <h1 class="createItem">Edit Item</h1>
+        <!-- Button to close the slide panel -->
+        <button id="exitButtonEdit">x</button>
+        <!-- Container for the input field to enter new tasks -->
+        <div id="inputContainer">
+            <input type="text" name="textboxEdit" id="textboxEdit" placeholder="Enter task here">
+
+            <input type="time" name="timeInputEdit" id="timeInputEdit">
+            <input type="button" name="cancelRepeat" id="cancelRepeat">
+            <div id="repeat">
+                <h3 class="choose">Repeat</h3>
+                <input type="radio" id="never" name="repeatEdit" checked>
+                <label for="never">None</label> <br>
+                <input type="radio" id="days" name="repeatEdit">
+                <label for="days">Daily</label> <br>
+                <input type="radio" id="weeks" name="repeatEdit">
+                <label for="weeks">Weekly</label>
+            </div>
+        </div>
+        <!-- Button to finish adding a new task -->
+        <button id="closeButtonEdit">Done</button>
+    </div>
+    <div id="slidePanelSettings">
+        <h1 class="settings">Settings</h1>
+        <!-- Button to close the slide panel -->
+        <h2 class="settingTitles">Notifications</h2>
+        <button id="exitButtonSettings">x</button>
+        <label class="switch">
+            <input type="checkbox" id="settingsCheck">
+            <span class="slider round"></span>
+
+        </label>
+        <h2 class="settingTitles">Theme</h2>
+        <div class="theme">
+            <input type="radio" name="theme" id="theme1" checked>
+            <label id="red" for="theme1"></label>
+            <input type="radio" name="theme" id="theme2">
+            <label id="orange" for="theme2"></label>
+            <input type="radio" name="theme" id="theme3">
+            <label id="yellow" for="theme3"></label><br>
+            <input type="radio" name="theme" id="theme4">
+            <label id="green" for="theme4"></label>
+            <input type="radio" name="theme" id="theme5">
+            <label id="blue" for="theme5"></label>
+            <input type="radio" name="theme" id="theme6">
+            <label id="purple" for="theme6"></label>
+        </div>
+        <button id="applySettings">Apply Settings</button>
+
+    </div>
+    <div id="slidePanelPush">
+        <h1 class="pushForward">Push Forward</h1>
+        <!-- Button to close the slide panel -->
+        <button id="exitButtonPush">x</button>
+        <button id="nextDay" onclick="nextDayButtonFunction()">Next Day</button><br>
+        <button id="nextWeek" onclick="nextWeekButtonFunction()">Next Week</button>
+        <button id="closeButtonPush">Cancel</button>
+    </div>
+    <!-- Link to the JavaScript file that contains the logic for the page -->
+    <script src="to-do.js"></script>
+</body>
+<!-- 
+    functions used for Debugging, doesn't work for live server
+    checkLocalStorageTaskCards()
+    clearAllTasks()
+    addTasks()
+    hiddenTheme(1-9)
+    
+    1=theme1
+    2=theme2
+    3=theme3
+    4=theme4
+    5=theme5
+    6=theme6
+    7=christmas
+    8=not here
+    9=umm
+-->
+
+</html>

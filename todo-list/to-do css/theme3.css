@@ -1,0 +1,206 @@
+body {
+    background-color: #58585A;
+}
+
+/* Header Styling */
+header {
+    background-color: #58585A;
+    color: white;
+}
+
+/* Navigation Styling */
+body nav {
+    background-color: #EDDED1;
+    color: #58585A;
+}
+
+.navButton {
+    color: #58585A;
+    background-color: #EDDED1;
+    border: none;
+}
+
+/* Main Content Styling */
+main {
+    background-color: #DBD8D3;
+}
+
+/* Task Card Styling */
+.taskcard {
+    background-color: #F1EBDD;
+    color: #58585A;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    background-color: #555;
+    color: white;
+}
+
+/* Scroll to Top Button Styling */
+.totop {
+    background-color: #58585A;
+    border: none;
+    color: white;
+}
+
+/* Delete Button Styling */
+#deleteButton {
+    background-color: #F1EBDD;
+    border: #58585A 5px solid;
+}
+
+/* Edit Button Styling */
+#editButton {
+    background-image: url('../images/edit-button.PNG');
+    background-color: #F1EBDD;
+
+}
+
+/* Next Day Button Styling */
+#push {
+    background-image: url('../images/push-forward.png');
+    background-color: #F1EBDD;
+}
+
+/* Slide Panel Styling */
+#slidePanel,
+#slidePanelEdit {
+    background-color: #DBD8D3;
+}
+
+#slidePanelSettings {
+    background-color: #DBD8D3;
+}
+
+#slidePanelPush {
+    background-color: #DBD8D3;
+}
+
+.createItem {
+    color: #58585A;
+}
+
+.pushForward {
+    color: #58585A;
+}
+
+.settings {
+    color: #58585A;
+}
+
+#repeat {
+    background-color: #DBD8D3;
+    color: #58585A;
+}
+
+#timeInput,
+#timeInputEdit {
+    border: 2px solid #58585A;
+}
+
+/* Close Button within Slide Panel */
+#closeButton,
+#closeButtonEdit {
+    background-color: #58585A;
+    color: white;
+}
+
+#closeButtonPush {
+    background-color: #58585A;
+    color: white;
+}
+
+#openButton {
+    background-color: #EDDED1;
+    color: #58585A;
+}
+
+#textbox,
+#textboxEdit {
+    border: 2px solid #58585A;
+}
+
+/* Exit Button within Slide Panel */
+#exitButton,
+#exitButtonEdit,
+#exitButtonSettings,
+#exitButtonPush {
+    background-color: #DBD8D3;
+    color: #58585A;
+}
+
+/* Toast Notification Styling */
+#toast {
+    background-color: #EDDED1;
+    color: #58585A;
+}
+
+.undoButton {
+    background-color: #58585A;
+    color: #F1EBDD;
+}
+
+#nextDay {
+    background-color: #58585A;
+    color: white;
+}
+
+#nextWeek {
+    background-color: #58585A;
+    color: white;
+}
+
+/* it shows when you go to far through the day */
+#snackBar {
+    background-color: #58585A;
+    color: #EDDED1;
+}
+
+#snackBarD {
+    background-color: #58585A;
+    color: #EDDED1;
+}
+
+#snackBarM {
+    background-color: #58585A;
+    color: #EDDED1;
+}
+
+#settings {
+    background-image: url('../images/settings-icon.png');
+}
+
+.choose {
+    color: #58585A;
+}
+
+#timeSection {
+    color: #58585A;
+}
+
+/* The slider */
+.slider {
+    background-color: #c4af9d;
+}
+
+.slider:before {
+    background-color: #EDDED1;
+}
+
+input:checked+.slider {
+    background-color: #58585A;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #58585A;
+}
+
+#applySettings {
+    background-color: #58585A;
+    color: white;
+}
+
+.settingTitles {
+    color: #58585A;
+}
